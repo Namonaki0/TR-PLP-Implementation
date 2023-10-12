@@ -1,20 +1,35 @@
 > For the sake of maintainability, readability, scalability and reusability, separation of concerns was maintained throughout the development.
 
 root/
+
 ├── index.php
+
 ├── assets/
+
 │ └── img/
+
 ├── components/
+
 │ ├── productTemplate.php
+
 │ └── sortBy.php
+
 ├── css/
+
 │ └── styles.css
+
 ├── data/
+
 │ ├── database.php
+
 │ └── product.json
+
 ├── filters/
+
 │ └── productSortByFilter.js
+
 └── README.md
+
 
 > index.php
 
