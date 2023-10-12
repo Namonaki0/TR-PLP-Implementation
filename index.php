@@ -4,10 +4,10 @@ require_once "components/productTemplate.php";
 
 function displayProducts()
 {
-  $servername = "localhost:3307";
-  $username = "root";
-  $password = "";
-  $dbname = "product";
+  $servername = "sql101.infinityfree.com";
+  $username = "if0_35211866";
+  $password = "9rL3mwqSErvk";
+  $dbname = "if0_35211866_product";
 
   $connection = new DatabaseConnection($servername, $username, $password, $dbname);
   $conn = $connection->connect();
@@ -33,30 +33,29 @@ function displayProducts()
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+  <style>
     <?php include 'css/styles.css';
     ?>
-    </style>
+  </style>
 
-    <meta name="description"
-        content="Explore a collection of essential products including furniture, home appliances, photo albums, and more. Always with great prices.">
-    <title>TR-PLP</title>
+  <meta name="description" content="Explore a collection of essential products including furniture, home appliances, photo albums, and more. Always with great prices.">
+  <title>TR-PLP</title>
 </head>
 
 <body>
-    <main>
-        <h3 class="product-title">Office Essentials</h3>
-        <?php include 'components/sortBy.php'; ?>
+  <main>
+    <h3 class="product-title">Office Essentials</h3>
+    <?php include 'components/sortBy.php'; ?>
 
-        <div class="product-listing" id="productListing">
-            <?php displayProducts(); ?>
-        </div>
-    </main>
+    <div class="product-listing" id="productListing">
+      <?php displayProducts(); ?>
+    </div>
+  </main>
 
-    <script src="filters/productSortByFilter.js"></script>
+  <script src="filters/productSortByFilter.js"></script>
 </body>
 
 </html>
