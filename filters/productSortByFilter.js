@@ -34,11 +34,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const productListing = document.getElementById("productListing");
+  const productContainers = Array.from(
+    productListing.getElementsByClassName("product-container")
+  );
 
   const sortByPrice = () => {
-    const productContainers = Array.from(
-      productListing.getElementsByClassName("product-container")
-    );
     productContainers.sort((a, b) => {
       const productPriceA = parseFloat(
         a.querySelector("p").innerText.split("£")[1]
@@ -55,9 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const sortByReview = () => {
-    const productContainers = Array.from(
-      productListing.getElementsByClassName("product-container")
-    );
     productContainers.sort((a, b) => {
       const reviewA = parseFloat(
         (
@@ -69,6 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
           b.querySelector(".review-score") || { innerText: "0%" }
         ).innerText.split("%")[0]
       );
+
+      if (isNaN(reviewA)) return 1;
+      if (isNaN(reviewB)) return -1;
+
       return reviewB - reviewA;
     });
     productListing.innerHTML = "";
@@ -78,9 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const sortByName = () => {
-    const productContainers = Array.from(
-      productListing.getElementsByClassName("product-container")
-    );
     productContainers.sort((a, b) => {
       const nameA = a.querySelector("h4").innerText.toLowerCase();
       const nameB = b.querySelector("h4").innerText.toLowerCase();
@@ -95,9 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const sortBySaving = () => {
-    const productContainers = Array.from(
-      productListing.getElementsByClassName("product-container")
-    );
     productContainers.sort((a, b) => {
       const productSavingA = parseFloat(
         (
@@ -117,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   };
 
-  //   mobile panel functionality
+  // mobile panel functionality
   const handlePanelTriggerClick = () => {
     const sortByWrapper = document.getElementById("sortWrapper");
     sortByWrapper.classList.add("open-filter-panel");
