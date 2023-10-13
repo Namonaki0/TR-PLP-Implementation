@@ -12,13 +12,18 @@
   padding: 0;
 }
 
+html,
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--primary-font);
   font-size: medium;
   display: grid;
   min-height: 100vh;
   place-content: center;
-  overflow-x: hidden;
 }
 
 main {
@@ -67,19 +72,22 @@ button {
 
 .sort-by-panel-trigger {
   padding: 0.5rem 1rem;
-  width: calc(100vw - 5rem);
+  width: 50vw;
   margin: auto;
   transition: all 120ms linear;
   font-weight: bold;
 }
 
 .sort-by-wrapper {
-  position: absolute;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   transform: translateX(100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  inset: 0;
   z-index: 100;
   background: white;
   border-left: 5px solid var(--highlight);

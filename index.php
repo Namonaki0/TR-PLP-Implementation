@@ -4,10 +4,10 @@ require_once "components/productTemplate.php";
 
 function displayProducts()
 {
-  $servername = "sql101.infinityfree.com";
-  $username = "if0_35211866";
-  $password = "9rL3mwqSErvk";
-  $dbname = "if0_35211866_product";
+  $servername = "sql306.infinityfree.com";
+  $username = "if0_35221872";
+  $password = "ZH9tCjHn2kAIgxV";
+  $dbname = "if0_35221872_products";
 
   $connection = new DatabaseConnection($servername, $username, $password, $dbname);
   $conn = $connection->connect();
