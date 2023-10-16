@@ -64,7 +64,7 @@ root/
 
 ---
 
-###Finished Screenshots
+### Finished Screenshots
 
 > mobile layout
 
